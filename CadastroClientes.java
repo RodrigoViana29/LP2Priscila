@@ -29,5 +29,6 @@ public class CadastroClientes {
 		for(int i = 0; i< clientes.length;i++) {
 			System.out.println(clientes[i]);
 		}
+	sc.close();	
 	}
 }
