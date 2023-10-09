@@ -1,6 +1,21 @@
 import java.util.Scanner;
 
 public class CadastroClientes {
+	
+
+
+public static   boolean buscadoCliente(String nome, Cliente[] clientes) {
+	boolean j = false;
+	for(int i = 0; i < clientes.length; i++) {
+		if (clientes[i].getNome().equals(nome))  {
+			System.out.println(clientes[i]);
+			j = true;
+			
+		}
+		
+	}
+	return j;
+}
 
 public static void main(String[] args) {
 Scanner sc = new Scanner(System.in);
@@ -42,12 +57,13 @@ menu = sc.nextInt();
 					
 				
 			if (menu == 2) {
-				String nome = sc.nextLine();
-				for(int i = 0; i<qtd;i++) {
-					//if (nome == )
-					
-					System.out.println(clientes[i]);
-				}
+				System.out.print("Informe o nome do cliente que deseja buscar: ");
+        		String nomedoCliente = sc.next();
+        			if(!buscadoCliente(nomedoCliente, clientes)) {
+        				System.out.println("Nenhum cliente com o nome "+nomedoCliente+"  encontrado.");
+        			}
+        		
+				
 			}
 			if (menu == 3) {
 				for(int i = 0; i<qtd;i++) {
