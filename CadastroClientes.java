@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 public class CadastroClientes {
 	
-
-
 public static   boolean buscadoCliente(String nome, Cliente[] clientes) {
 	boolean j = false;
 	for(int i = 0; i < clientes.length; i++) {
@@ -80,10 +78,5 @@ menu = sc.nextInt();
 			
 		}
 	sc.close();	
-	}
-			
-}
-	sc.close();	
-	}
-			
+	}		
 }
