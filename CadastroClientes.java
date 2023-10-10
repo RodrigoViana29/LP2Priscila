@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class CadastroClientes {
 	
 
@@ -7,11 +8,15 @@ public class CadastroClientes {
 public static   boolean buscadoCliente(String nome, Cliente[] clientes) {
 	boolean j = false;
 	for(int i = 0; i < clientes.length; i++) {
-		if (clientes[i].getNome().equals(nome))  {
+		if (clientes[i].getNome() == null) {
+			return j;
+		}
+		if (clientes[i].getNome().equalsIgnoreCase(nome))  {
 			System.out.println(clientes[i]);
 			j = true;
 			
 		}
+		
 		
 	}
 	return j;
@@ -34,7 +39,7 @@ menu = sc.nextInt();
 	while (menu != 4) {
 			
 			if (menu == 1) {
-				if (clientes.length < 51) {
+				if (qtd< 51) {
 					Cliente novocliente = new Cliente();
 					System.out.println("Informe o código do cliente: ");
 					novocliente.setCodigo(sc.nextInt());
@@ -74,6 +79,10 @@ menu = sc.nextInt();
 			menu = sc.nextInt();
 			
 		}
+	sc.close();	
+	}
+			
+}
 	sc.close();	
 	}
 			
