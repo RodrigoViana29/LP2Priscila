@@ -1,4 +1,3 @@
-
 public class Filme {
 	private String titulo;
 	private String descricao;
@@ -44,9 +43,8 @@ public class Filme {
 
 
 	public void setDiretor(String n,int t,String l) {
-		this.diretor.setNome(n); 
-		this.diretor.setTempodeexperiencia(t);
-		this.diretor.setLocal(l);
+		Diretor diretor2 = new Diretor(n,t,l);
+		this.diretor = diretor2;
 	}
 
 
@@ -68,18 +66,9 @@ public class Filme {
 		
 	}
 	
-	public String comparartitulo(String t) {
-		if (this.titulo.equals(t)) {
-			return "titulo: "+ this.titulo+
-					"\n descrição: " + this.descricao+
-					"\n diretor: " + this.diretor+
-					"\n duração em minutos: "+this.duracaoEmMinutos;
-		}
-		else {
-			return "O titulo " + t + "não foi encontrado";
-		}
-	}
-
+	public boolean comparartitulo(String t) {
+		return this.titulo.equals(t);
+		 }
 
 	public String toString() {
 		return "titulo = " + this.titulo + ", descricao = " + this.descricao + ", diretor = " + this.diretor + ", duracaoEmMinutos = "
